@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -70,6 +71,10 @@ public class CozinhaController {
 		Cozinha cozinha = service.busca(cozinhaId);
 		service.remove(cozinha);
 		return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+	}
+	@GetMapping("/por-nome")
+	public ResponseEntity<List<Cozinha>> listaPorNome(@RequestParam String nome){
+		return ResponseEntity.status(HttpStatus.ACCEPTED).body(service.listaPorNome(nome));
 	}
 
 }

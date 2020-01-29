@@ -31,4 +31,9 @@ public class CozinhaService {
 	public void remove(Cozinha cozinha) {
 		repository.remove(cozinha);
 	}
+	
+	public List<Cozinha> listaPorNome(String nome) {
+		return repository.listaPorNome(nome);
+		
+	}
 }

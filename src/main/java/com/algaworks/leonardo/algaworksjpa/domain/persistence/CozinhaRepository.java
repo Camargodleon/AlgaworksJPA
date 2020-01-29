@@ -49,4 +49,11 @@ public class CozinhaRepository implements Repository{
 		
 	}
 
+	@Override
+	public <T> List<T> listaPorNome(String nome) {
+		Query query = entity.createQuery("SELECT c FROM Cozinha c WHERE nome like :nome");
+		query.setParameter("nome", "%" + nome + "%");
+		return query.getResultList();
+	}
+
 }

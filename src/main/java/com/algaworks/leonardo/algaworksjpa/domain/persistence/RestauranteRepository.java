@@ -48,4 +48,10 @@ public class RestauranteRepository implements Repository{
 		
 	}
 
+	@Override
+	public <T> List<T> listaPorNome(String nome) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
